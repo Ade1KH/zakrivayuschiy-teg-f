@@ -12,25 +12,30 @@
 /*@supports (font-variation-settings: normal) { }*/
 @supports (font-variation-settings: normal) {
   .page {
-    font-variation-settings: "wgth" var(--font-inter-weight),
-      "wdth" var(--font-inter-str), "opsz" 0;
+    font-variation-settings: "wght" var(--font-inter-weight),
+      "wght" var(--font-inter-str), "opsz" 0;
   }
 }
 
-@supports (text-shadow: 0 0 1px #fff) {
+@supports (
+  (text-stroke: 1px var(--color-text-shadow)) or
+    (-webkit-text-stroke: 1px var(--color-text-shadow))
+) {
   .watermark {
-    text-shadow: -1px 0 var(--color-text-shadow),
-      1px -1px 0 var(--color-text-shadow), -1px 1px 0 var(--color-text-shadow),
-      1px 1px 0 var(--color-text-shadow);
+    -webkit-text-stroke: 1px var(--color-text-shadow);
+    text-stroke: 1px var(--color-text-shadow);
+    text-shadow: none;
   }
 }
 
 .page {
   display: flex;
   flex-direction: column;
-  gap: 105px;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
   margin: 100px var(--margin-size);
-  font-family: var(--font-inter), "inter";
+  font-family: var(--accent-font), sans-serif;
   font-size: var(--font-inter-size);
   background-image: var(--background-gradient);
   background-size: cover;
@@ -52,19 +57,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border: 2px solid #000;
-  font-family: var(--font-pressStart2P), fantasy;
+  font-family: var(--font-pressStart2P), 'fantasy';
   background-color: #fff;
   inline-size: var(--inline-size-title);
-  min-block-size: var(--block-size-title);
-}
-
-.header-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 128px 0;
   gap: 20px;
-  align-self: center;
 }
 
 .header-title__text {
@@ -90,7 +89,7 @@
 .content-list__item {
   display: flex;
   flex-direction: column;
-  outline: 2px solid #000;
+  border: 2px solid #000;
   line-height: var(--line-height);
   background-color: #fff;
   inline-size: var(--inline-size-section);
@@ -98,14 +97,13 @@
 
 .list-item__image {
   position: relative;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-  background: rgb(32, 36, 0);
-  background: linear-gradient(
-    197deg,
-    rgba(32, 36, 0, 0.3029805672268907) 0%,
-    rgba(0, 212, 255, 0.5494791666666667) 100%
-  );
+}
+
+.list-image {
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
 }
 
 .watermark {
@@ -113,7 +111,7 @@
   top: 25px;
   right: 25px;
   z-index: 1;
-  font-family: var(--font-pressStart2P), fantasy;
+  font-family: var(--font-pressStart2P), 'fantasy';
   font-weight: 400;
   font-size: var(--font-watermark);
   line-height: 14px;
@@ -121,33 +119,34 @@
     1px -1px 0 var(--color-text-shadow), -1px 1px 0 var(--color-text-shadow),
     1px 1px 0 var(--color-text-shadow);
   mix-blend-mode: hard-light;
+  opacity: 0.5;
 }
 
-.image__two {
+.filter-blur {
   filter: blur(0.3em);
 }
 
-.image__three {
+.filter-saturate {
   filter: saturate(258%);
 }
 
-.image__four {
+.filter-invert {
   filter: invert(0.7);
 }
 
-.image__five {
+.filter-drop-shadow {
   filter: drop-shadow(5px 15px 3px rgba(0, 0, 0, 0.8));
 }
 
-.image__six {
-  filter: brightness(200%);
+.filter-brightness {
+  filter: brightness(120%);
 }
 
-.image__seven {
+.filter-opacity {
   filter: opacity(0.4);
 }
 
-.image__eight {
+.filter-sepia-contrast-brightness {
   filter: sepia(1) contrast(2) brightness(200%);
 }
 
@@ -174,12 +173,27 @@
 
 .button {
   position: relative;
-  border: none;
+  border: 2px solid #000;
   overflow: hidden;
   color: inherit;
   list-style: none;
   background-color: inherit;
   cursor: pointer;
+  transition: 0.3s ease;
+  color: #000;
+  font-family: var(--font-pressStart2P), 'fantasy';
+  font-weight: var(--font-weight-title);
+  font-size: 14px;
+  line-height: 13px;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 #000;
 }
 
 .button::before {
@@ -205,24 +219,26 @@
 .interactive {
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  gap: 8px;
   align-self: flex-end;
 }
 
 .like-icon {
-  outline: 2px solid transparent;
+  display: block;
+  block-size: 34px;
   transition-timing-function: linear;
-  cursor: pointer;
+  transform-origin: center;
 }
 
 .core {
   fill: transparent;
-  transition: fill 0.3s ease-in-out 0.03s;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s linear;
 }
 
 .contour {
@@ -233,26 +249,17 @@
   opacity: 0;
 }
 
-.like-icon:focus {
+.card__icon-button:focus {
   outline: none;
 }
 
-.like-icon:focus-visible {
+.card__icon-button:focus-visible {
   outline: 2px solid #000;
-  transition: outline 0.3s ease;
-}
-
-.like-icon .is-liked .heart {
-  animation: scale 0.3s 0.1s ease-in;
-}
-
-.like-icon .is-liked .sparks {
-  animation: sparks 0.3s 0.3s ease-in;
 }
 
 .like-icon:hover .main-body {
   fill: var(--heart-hover-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon:hover .core {
@@ -262,12 +269,18 @@
 
 .like-icon:active .main-body {
   fill: var(--main-color-heart);
-  transition: fill 0.3s;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon:active .core {
   fill: var(--main-color-heart);
   transition: fill 0.3s;
+}
+
+.like-icon.is-liked .heart {
+  fill: var(--main-color-heart);
+  animation: heartbeat 0.3s 0.1s ease-in 2 alternate;
+  transform-origin: center;
 }
 
 .like-icon.is-liked .core {
@@ -285,46 +298,25 @@
   transition: fill 0.3s ease-in-out 0.06s;
 }
 
-.card__like-button {
-  outline: 2px solid #000;
-  color: #000;
-  font-family: var(--font-pressStart2P), fantasy;
-  font-weight: var(--font-weight-title);
-  font-size: 14px;
-  line-height: 13px;
-  inline-size: 126px;
-  block-size: 36px;
-}
-
-.button:focus-visible {
-  box-shadow: 4px 4px 0 #000;
-  transition: box-shadow 0.3s ease;
-}
-
-.save {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-}
-
 .card__icon-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 18.5px 19px;
-  outline: 2px solid #000;
-  color: #000;
-  font-family: var(--font-pressStart2P), fantasy;
-  font-weight: var(--font-weight-title);
-  font-size: 14px;
-  line-height: 13px;
-  background-color: #fff;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: 2px solid transparent;
+  transition: outline 0.3s linear;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
 }
 
 .save__button-text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 13px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  inline-size: 337px;
+  block-size: 53px;
 }
 
 .dialog[open] {
@@ -358,7 +350,7 @@
 }
 
 .dialog-window__title {
-  font-family: var(--font-pressStart2P), fantasy;
+  font-family: var(--font-pressStart2P), 'fantasy';
   font-weight: var(--button-icon-weight);
   font-size: 14px;
   line-height: 21px;
@@ -371,13 +363,6 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 18px 19px;
-  outline: 2px solid #000;
-  color: #000;
-  font-family: var(--font-pressStart2P), fantasy;
-  font-weight: var(--button-icon-weight);
-  font-size: 14px;
-  line-height: 13px;
   background-color: #fff;
 }
 
@@ -400,6 +385,10 @@
 }
 
 @media (width <= 375px) {
+  .header {
+    padding: 120px 0;
+  }
+
   .card__button {
     display: flex;
     flex-direction: column;
@@ -412,5 +401,10 @@
 
   .dialog-window .card__button {
     padding: 10px 112px;
+  }
+
+  .save__button-text {
+    block-size: 84px;
+    inline-size: 306px;
   }
 }

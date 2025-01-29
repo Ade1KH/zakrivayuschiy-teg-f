@@ -1,8 +1,8 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --background-image: url(../svg/background.svg);
-  --font-inter: 'Inter-Variable';
-  --font-pressStart2P: 'PressStart2P-Regular';
+  --accent-font: 'Inter-Variable';
+  --font-pressStart2P: 'PressStart2P';
   --font-inter-weight: 400 900;
   --font-inter-str: 50% 200%;
   --font-inter-size: 18px; 
@@ -19,7 +19,7 @@
   --inline-size-title: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   --block-size-title: clamp(20.4375rem, 19.5792rem + 3.662vw, 22.875rem);
   --margin-size: clamp(0rem, -8.1426rem + 34.7418vw, 23.125rem);
-  --inline-size-section: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+  --inline-size-section: clamp(23.4375rem, 16.3292rem + 30.3286vw, 43.625rem);
   --color-text-shadow: #fff;
   --button-icon-weight: 400;
   --contour-color: black;
@@ -28,5 +28,6 @@
   --background-gradient: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
   repeating-linear-gradient(to top, #d3d3d3, transparent 2px),
   linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  --list-image-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
 }
 
