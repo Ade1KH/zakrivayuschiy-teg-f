@@ -22,9 +22,9 @@
     (-webkit-text-stroke: 1px var(--color-text-shadow))
 ) {
   .watermark {
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--color-text-shadow);
     text-stroke: 1px var(--color-text-shadow);
-    text-shadow: none;
   }
 }
 
@@ -58,12 +58,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   border: 2px solid #000;
-  font-family: var(--font-pressStart2P), 'fantasy';
+  padding: 128px 0;
+  font-family: var(--font-pressStart2P), "fantasy";
   background-color: #fff;
   inline-size: var(--inline-size-title);
-  padding: 128px 0;
-  gap: 20px;
 }
 
 .header-title__text {
@@ -100,10 +100,10 @@
 }
 
 .list-image {
-  inline-size: 100%;
-  aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
+  inline-size: 100%;
+  aspect-ratio: 1/1;
 }
 
 .watermark {
@@ -111,7 +111,8 @@
   top: 25px;
   right: 25px;
   z-index: 1;
-  font-family: var(--font-pressStart2P), 'fantasy';
+  opacity: 0.5;
+  font-family: var(--font-pressStart2P), "fantasy";
   font-weight: 400;
   font-size: var(--font-watermark);
   line-height: 14px;
@@ -119,7 +120,6 @@
     1px -1px 0 var(--color-text-shadow), -1px 1px 0 var(--color-text-shadow),
     1px 1px 0 var(--color-text-shadow);
   mix-blend-mode: hard-light;
-  opacity: 0.5;
 }
 
 .filter-blur {
@@ -176,15 +176,15 @@
   border: 2px solid #000;
   overflow: hidden;
   color: inherit;
-  list-style: none;
-  background-color: inherit;
-  cursor: pointer;
-  transition: 0.3s ease;
   color: #000;
-  font-family: var(--font-pressStart2P), 'fantasy';
+  font-family: var(--font-pressStart2P), "fantasy";
   font-weight: var(--font-weight-title);
   font-size: 14px;
   line-height: 13px;
+  list-style: none;
+  background-color: inherit;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .card__icon-button:focus-visible {
@@ -192,8 +192,8 @@
 }
 
 .button:focus-visible {
-  outline: none;
   box-shadow: 2px 2px 0 #000;
+  outline: none;
 }
 
 .button::before {
@@ -218,17 +218,17 @@
 
 .interactive {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 8px;
   align-self: flex-end;
 }
 
 .like-icon {
   display: block;
-  block-size: 34px;
   transition-timing-function: linear;
   transform-origin: center;
+  block-size: 34px;
 }
 
 .core {
@@ -279,8 +279,8 @@
 
 .like-icon.is-liked .heart {
   fill: var(--main-color-heart);
-  animation: heartbeat 0.3s 0.1s ease-in 2 alternate;
   transform-origin: center;
+  animation: heartbeat 0.3s 0.1s ease-in 2 alternate;
 }
 
 .like-icon.is-liked .core {
@@ -299,10 +299,10 @@
 }
 
 .card__icon-button {
-  padding: 0;
   border: none;
-  background-color: transparent;
+  padding: 0;
   outline: 2px solid transparent;
+  background-color: transparent;
   transition: outline 0.3s linear;
 }
 
@@ -350,7 +350,7 @@
 }
 
 .dialog-window__title {
-  font-family: var(--font-pressStart2P), 'fantasy';
+  font-family: var(--font-pressStart2P), "fantasy";
   font-weight: var(--button-icon-weight);
   font-size: 14px;
   line-height: 21px;
