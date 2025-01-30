@@ -26,6 +26,7 @@
   --contour-color: black;
   --main-color-heart: #ff0000;
   --heart-hover-color: black;
+  --dialog-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   --background-gradient: repeating-linear-gradient(
       to right,
       #d3d3d3,

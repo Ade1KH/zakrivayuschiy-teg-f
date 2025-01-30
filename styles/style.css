@@ -16,7 +16,6 @@
   }
 
   .list-title {
-    padding: 3px 12px;
     font-variation-settings: "wght" var(--weight-title);
   }
 }
@@ -327,6 +326,7 @@
   position: fixed;
   inset: 0;
   display: grid;
+  inline-size: var(--dialog-size);
 }
 
 .dialog:not([open]) {
