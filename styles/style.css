@@ -177,6 +177,7 @@
 
 .list-text {
   margin-bottom: 27px;
+  font-variation-settings: "wght" var(--font-weight);
 }
 
 .button {
