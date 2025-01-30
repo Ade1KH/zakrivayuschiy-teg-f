@@ -4,13 +4,12 @@
   --accent-font: "Inter-Variable";
   --font-pressStart2P: "PressStart2P";
   --font-accent-weight: 400;
-  --font-inter-str: 50% 200%;
-  --font-inter-size: 18px;
+  --font-accent-size: 18px;
   --font-size-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --line-height-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --font-size-subtitle: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   --line-height-subtitle: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  --font-weight-title: 400;
+  --font-weight-title: 700;
   --font-watermark: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
   --line-height: 21px;
   --font-section-title: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
