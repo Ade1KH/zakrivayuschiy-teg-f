@@ -41,7 +41,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--font-accent-weight);
+  font-variation-settings: "wght" var(--font-weight);
 }
 
 .main {
@@ -162,13 +162,12 @@
 
 .list-title {
   padding: 3px 12px;
-  font-variation-settings: 'wght' var(--section-title-weight);
+  font-variation-settings: 'wght' var(--font-weight);
   font-size: var(--font-section-title);
   line-height: var(--line-height-section-title);
 }
 
 .list-text {
-  font-variation-settings: "wght" var(--font-accent-weight);
   margin-bottom: 27px;
 }
 
