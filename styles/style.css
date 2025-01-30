@@ -12,7 +12,7 @@
 /*@supports (font-variation-settings: normal) { }*/
 @supports (font-variation-settings: normal) {
   .page {
-    font-variation-settings: "wght" var(--font-weight);
+    font-variation-settings: 'wght' var(--font-weight);
   }
 
   .list-title {
@@ -47,7 +47,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--font-weight);
+  font-variation-settings: 'wght' var(--font-weight);
 }
 
 .main {
