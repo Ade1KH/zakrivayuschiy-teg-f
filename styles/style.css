@@ -12,12 +12,12 @@
 /*@supports (font-variation-settings: normal) { }*/
 @supports (font-variation-settings: normal) {
   .page {
-    font-variation-settings: 'wght' var(--font-weight);
+    font-variation-settings: "wght" var(--font-weight);
   }
 
   .list-title {
     padding: 3px 12px;
-    font-variation-settings: 'wght' var(--weight-title);
+    font-variation-settings: "wght" var(--weight-title);
   }
 }
 
@@ -47,7 +47,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: 'wght' var(--font-weight);
+  font-variation-settings: "wght" var(--font-weight);
 }
 
 .main {
@@ -170,7 +170,7 @@
   --weight-title: 700;
 
   padding: 3px 12px;
-  font-variation-settings: 'wght' var(--weight-title);
+  font-variation-settings: "wght" var(--weight-title);
   font-size: var(--font-section-title);
   line-height: var(--line-height-section-title);
 }
