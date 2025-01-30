@@ -14,6 +14,11 @@
   .page {
     font-variation-settings: "wght" var(--font-weight);
   }
+
+  .list-title {
+    padding: 3px 12px;
+    font-variation-settings: 'wght' var(--weight-title);
+  }
 }
 
 @supports (
@@ -28,6 +33,8 @@
 }
 
 .page {
+--font-weight: 400;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,8 +167,10 @@
 }
 
 .list-title {
+  --weight-title: 700;
+
   padding: 3px 12px;
-  font-variation-settings: 'wght' var(--font-weight);
+  font-variation-settings: 'wght' var(--weight-title);
   font-size: var(--font-section-title);
   line-height: var(--line-height-section-title);
 }

@@ -5,6 +5,7 @@
   --font-pressStart2P: "PressStart2P";
   --font-accent-weight: 400;
   --font-weight: 400;
+  --weight-title: 700;
   --font-accent-size: 18px;
   --font-size-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --line-height-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
