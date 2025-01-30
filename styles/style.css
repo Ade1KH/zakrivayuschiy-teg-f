@@ -326,7 +326,7 @@
   position: fixed;
   inset: 0;
   display: grid;
-  inline-size: var(--dialog-size);
+  
 }
 
 .dialog:not([open]) {
