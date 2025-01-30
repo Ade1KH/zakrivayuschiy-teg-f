@@ -167,6 +167,7 @@
   font-variation-settings: "wght" var(--weight-title, 700);
   font-size: var(--font-section-title);
   line-height: var(--line-height-section-title);
+  margin: 3px 0 3px 10px;
 }
 
 .list-text {
@@ -389,6 +390,10 @@
 
   .watermark {
     right: 13px;
+  }
+
+  .list-title {
+    margin: 3px 0 5px 10px;
   }
 
   .card__button {
