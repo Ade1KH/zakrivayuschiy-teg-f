@@ -32,8 +32,6 @@
 }
 
 .page {
---font-weight: 400;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,9 +164,6 @@
 }
 
 .list-title {
-  --weight-title: 700;
-
-  padding: 3px 12px;
   font-variation-settings: "wght" var(--weight-title, 700);
   font-size: var(--font-section-title);
   line-height: var(--line-height-section-title);
@@ -176,7 +171,6 @@
 
 .list-text {
   margin-bottom: 27px;
-  font-variation-settings: "wght" var(--font-weight, 400);
 }
 
 .button {
