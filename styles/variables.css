@@ -1,11 +1,11 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --background-image: url(../svg/background.svg);
-  --accent-font: 'Inter-Variable';
-  --font-pressStart2P: 'PressStart2P';
-  --font-inter-weight: 400 900;
+  --accent-font: "Inter-Variable";
+  --font-pressStart2P: "PressStart2P";
+  --font-accent-weight: 400;
   --font-inter-str: 50% 200%;
-  --font-inter-size: 18px; 
+  --font-inter-size: 18px;
   --font-size-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --line-height-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --font-size-subtitle: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
@@ -23,11 +23,22 @@
   --color-text-shadow: #fff;
   --button-icon-weight: 400;
   --contour-color: black;
-  --main-color-heart: #FF0000;
+  --main-color-heart: #ff0000;
   --heart-hover-color: black;
-  --background-gradient: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
-  repeating-linear-gradient(to top, #d3d3d3, transparent 2px),
-  linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  --background-gradient: repeating-linear-gradient(
+      to right,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to top,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
   --list-image-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
 }
-
